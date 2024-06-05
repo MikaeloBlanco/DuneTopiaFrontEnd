@@ -1,0 +1,58 @@
+body {
+    background-color: black;
+    font-size: 14px;
+    margin: 0
+}
+
+.contenedor-registro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2%;
+    padding-bottom: 3%;
+}
+
+.formulario-registro {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(155, 155, 155, 0.5);
+    padding: 35px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.registro-input {
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 0 4px rgba(100, 100, 100, 0.2);
+    display:block;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.registro-boton {
+    padding: 15px;
+    cursor: pointer;
+    background-color: rgb(5, 210, 190);
+    font-weight: bold;
+}
+
+.registro-boton:hover {
+    background-color: rgb(5, 150, 190);;
+}
+
+.enlace-logueo{
+    padding-top: 1%;
+    text-decoration: underline;
+    cursor: pointer;
+    color: rgb(5, 10, 240);
+}
+
+.enlace-logueo:visited{
+    color: rgb(190, 40, 145);
+    cursor: pointer;
+    text-decoration: underline;
+}

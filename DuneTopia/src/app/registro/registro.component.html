@@ -1,1 +1,21 @@
-<p>registro works!</p>
+<div class="contenedor-registro">
+    <div class = "enlace-logueo" [routerLink]="'/logueo'">¿Estas registrado? Inicia Sesión Aquí.</div>
+    <form class="formulario-registro" [formGroup]="myForm" (ngSubmit)="uploadRegister()">
+        <h2>Registro</h2>
+        <label for ="nombre">Nombre:</label>
+        <input class="registro-input" type="text" formControlName="nombre" placeholder="Ingrese su nombre. Ej(Juan, Jose, John)">
+
+        <label for ="email">Correo Electronico:</label>
+        <input class="registro-input" type="email" formControlName="email" placeholder="Ingrese su correo aquí.">
+
+        <label for ="password">Contraseña:</label>
+        <input class="registro-input" type="password" formControlName="password" placeholder="Ingrese una contraseña">
+
+        <label for ="confirmPassword">Repetir Contraseña:</label>
+        <input class="registro-input" type="confirmPassword" formControlName="confirmPassword" placeholder="Confirme la contraseña anterior">
+
+        <label for ="direccion">Direccion:</label>
+        <input class="registro-input" type="direccion" formControlName="direccion" placeholder="Ingrese su direccion de residencia">
+
+        <button class="registro-boton" type="submit" [disabled]="myForm.invalid">Registrar</button>
+    </form>

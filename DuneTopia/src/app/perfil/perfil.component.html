@@ -1,1 +1,52 @@
-<p>perfil works!</p>
+<h2 *ngIf="usuario">Perfil de {{usuario.name}}</h2>
+<div *ngIf="usuario" class="perfil">
+    <div class="datos">
+        <div class="subdata">
+            <a><b>Nombre:</b>  {{usuario.name}}</a>
+            <br>
+            <a><b>Email:</b>  {{usuario.email}}</a>
+        </div>
+        <div class="subdata">
+            <a><b>Dirección:</b>  {{usuario.direccion}}</a>
+            <br>
+            <a *ngIf="usuario.isAdmin"><b>Rol:</b> Administrador</a>
+        </div>
+    </div>
+    <div>
+        <button class="boton-de-cambio" (click)="cambiarDatos=!cambiarDatos">Cambiar Datos</button>
+    </div>
+</div>
+<br><br>
+<div *ngIf="cambiarDatos" class="perfil">
+    <form class="formulario" [formGroup]="myForm">
+
+    <label for="nombre">Nombre:</label>
+    <input class="input" type="text" formControlName="nombre" placeholder="{{usuario.nombre}}">
+    
+    <label for="email">Email:</label>
+    <input class="input" type="email" formControlName="email" placeholder="{{usuario.email}}">
+
+    <label for="direccion">Direccion:</label>
+    <input class="input" type="direccion" formControlName="direccion" placeholder="{{usuario.direccion}}">
+
+    <label for="password">Contraseña:</label>
+    <input class="input" type="password" formControlName="password">
+    
+    <button class="boton-de-cambio" type="submit" (click)="cambiarDatos=!cambiarDatos;upload();" [disabled]="myForm.invalid">Guardar Cambios</button>
+</form>
+</div>
+
+<div *ngIf="usuario">
+    <div class="listaPedidos" *ngFor="let p of listaProductosOrdenados; let i = index">
+        <div class="pedido">
+            <div *ngFor="let product of p">
+            <p>{{product.nombre}}</p>
+            <img [routerLink]="'/detalle/' + product.id" class="imagenProducto" [src]="API_URL + product.image" alt="foto de {{product.nombre}}">
+            </div>
+        </div>
+        <div>
+            <p>Total: {{listaPedidosTotal[i].compra.precio.toFixed(2)}} €</p>
+            <a>Fecha: {{listaPedidosTotal[i].compra.fecha}}</a>
+        </div>
+    </div>
+</div>

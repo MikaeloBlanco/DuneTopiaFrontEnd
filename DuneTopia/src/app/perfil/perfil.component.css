@@ -1,0 +1,59 @@
+.perfil{
+    display: flex;
+    justify-content: space-around;
+}
+h2{
+    width: 100%;
+    text-align: center;
+}
+.datos{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+.subdata{
+    display: flex;
+    flex-direction: column;
+}
+.boton-de-cambio {
+    width: 30vw;
+    height: 7.5vh;
+    font-size: 3vh;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border: 2px solid rgba(10, 120, 150, 0.5);
+    cursor: pointer;
+}
+.boton-de-cambio:hover{
+    background-color: rgb(224, 224, 224);
+}
+.listaPedidos{
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+}
+.pedido{
+    border: solid 3px white;
+    display: flex;
+    width: 80%;
+    height: 20%;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+}
+.imagenProducto {
+    width: 25vh;
+    cursor: pointer;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 35vh;
+    width: 80%;
+}
+.input{
+    margin-bottom: 2%;
+}

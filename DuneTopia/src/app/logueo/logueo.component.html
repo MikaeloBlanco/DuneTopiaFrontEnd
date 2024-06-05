@@ -1,1 +1,19 @@
-<p>logueo works!</p>
+<html>
+    <head>
+        <title>Formulario de logueo</title>
+    </head>
+    <body>
+        <div class="contenedor">
+            <form class="formulario" [formGroup]="myForm" (ngSubmit)="uploadCredentials()">
+            <h2>Inicia Sesión</h2>
+            <input type="text" formControlName = "email" class="form-inputs" placeholder="Email">
+            <input type="password" formControlName="password" class="form-inputs" placeholder="Contraseña">
+            <div style="display: flex;">
+                <input type="checkbox" formControlName="infoDump" class="form-inputs"><a>Recuerdame</a>
+            </div>
+            <input type="submit" class="boton-de-logueo" value="Inicio de Sesión">
+        </form>
+        <div class="redireccion-registro" [routerLink]="'/registro'">¿Aun sin cuenta? Hazla Ahora</div>
+        </div>
+    </body>
+</html>

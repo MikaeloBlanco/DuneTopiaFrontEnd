@@ -1,0 +1,51 @@
+body{
+    background-color: black;
+    font-size: 14px;
+    margin:0;
+}
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2%;
+    padding-bottom: 3%;
+}
+.form {
+    background-color: white;
+    box-shadow: 0 0 12px rgba(125, 125, 125, 0.7);
+    padding: 30px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.form-inputs{
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(125, 125, 125, 0.2);
+    display: block;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.redireccion-registro{
+    padding-top: 2%;
+    text-decoration: underline;
+    cursor: pointer;
+    color: blue;
+}
+.redireccion-registro:visited{
+    color: rgb(150, 40, 150);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.boton-de-logueo{
+    padding: 15px;
+    cursor: pointer;
+    background-color: rgb(120, 120, 120);
+    font-weight: bold;
+}
+.boton-de-logueo:hover{
+    background-color: rgb(80, 80, 80);
+}

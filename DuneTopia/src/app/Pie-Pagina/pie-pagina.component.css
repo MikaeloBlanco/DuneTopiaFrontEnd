@@ -1,0 +1,19 @@
+@media screen and (max-width: 768px){
+    footer{
+        flex-direction: column;
+    }
+}
+
+footer {
+    background-color: rgb(5, 210, 190);
+    color:black;
+    padding: 10px;
+}
+
+.contenedor-pie-pagina {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
