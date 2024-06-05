@@ -11,7 +11,8 @@ import { PiePaginaComponent } from './Pie-Pagina/pie-pagina.component';
 @NgModule({
     declarations: [
         AppComponent,
-        
+        HeaderComponent,
+        PiePaginaComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -21,8 +22,6 @@ import { PiePaginaComponent } from './Pie-Pagina/pie-pagina.component';
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
-        HeaderComponent,
-        PiePaginaComponent
     ]
 })
 export class AppModule {}
