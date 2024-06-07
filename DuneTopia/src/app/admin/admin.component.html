@@ -1,1 +1,112 @@
-<p>admin works!</p>
+<div class="contenedor">
+    <div class="lista-usuario">
+        <h1>Lista de usuarios</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Correo Electrónico</th>
+                    <th>Rol</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let usuario of listaUsuarios">
+                    <td>{{ usuario.nombre }}</td>
+                    <td>{{ usuario.email }}</td>
+                    <td>{{ usuario.isAdmin ? 'Administrador' : 'Usuario' }}</td>
+                    <td>
+                        <button class="novo-producto" (click)="eliminarUsuario(usuario.id)">Borrar Usuario</button>
+                        <button class="novo-producto" (click)="actualizarRolUsuario(usuario.id, usuario.isAdmin)">Cambiar rol de Usuario</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="lista-productos">
+        <h1>Lista de productos</h1>
+        <button class="novo-producto" (click)="toggleModoEdicion()">Editar Lista</button>
+    </div>
+
+    <table *ngIf="!modoEditor">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Precio en €</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let productos of listaProductos; let i = index">
+                <td>{{ productos.id }}</td>
+                <td>
+                    <img class="imagen-producto" [src]="API_URL + productos.image" alt="foto de {{ productos.nombre }}">
+                </td>
+                <td>{{ productos.nombre }}</td>
+                <td>{{ productos.precio }}</td>
+                <td>{{ productos.stock }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div *ngIf="modoEditor">
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Precio en €</th>
+                    <th>Stock</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let productos of listaProductos; let i = index">
+                    <td>{{ productos.id }}</td>
+                    <td>
+                        <img class="imagen-producto" [src]="API_URL + productos.image" alt="foto de {{ productos.nombre }}">
+                        <input type="fichero" (change)="onSeleccionImagen($event, productos)" accept="image/*">
+                    </td>
+                    <td>
+                        <input type="text" [(ngModel)] = "productos.nombre">
+                    </td>
+                    <td>
+                        <input type="number" [(ngModel)] = "productos.precio">
+                    </td>
+                    <td>
+                        <input type="number" [(ngModel)] = "productos.stock">
+                    </td>
+                    <button (click)="editarOGuardarProducto(productos.id)"><img src="assets\Imagenes\Guardar.png"></button>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<button class="novo-producto" (click)="toggleFormularioProducto()">Crear Nuevo producto</button>
+<div *ngIf="mostrarFormularioProducto">
+    <h2>Crear Producto</h2>
+    <form [formGroup]="formulario" enctype="multipart/form-data">
+        <label for="nombre">Nombre: </label>
+        <input type="text" id="nombre" formControlName="nombre" required>
+
+        <label for="descripcion">Descripción: </label>
+        <input type="text" id="descripcion" formControlName="descripcion" required>
+
+        <label for="precio">Precio: </label>
+        <input type="number" id="precio" formControlName="precio" required>
+
+        <label for="stock">Stock: </label>
+        <input type="number" id="stock" formControlName="precio" required>
+
+        <label for="fichero">Imagen: </label>
+        <input type="file" id="fichero" (change)="onSeleccionFichero($event)" formControlName="fichero">
+
+        <button class="novo-producto" type="button" (click)="createProduct()">Crear Producto</button>
+    </form>
+</div>
+

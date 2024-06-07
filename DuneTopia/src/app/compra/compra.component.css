@@ -1,0 +1,38 @@
+@media screen and (max-width: 768px) {
+    .contenedor {
+      flex-direction: column;
+    }
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+}
+
+.producto , .imagen-producto{
+    width: 50%;
+}
+
+.iProducto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    margin: 1%;
+}
+
+.pago{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+}

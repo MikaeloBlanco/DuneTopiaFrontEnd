@@ -59,7 +59,7 @@ export class PerfilComponent implements OnInit {
   }
 
   async getCompras(){
-    const request$ = this.httpClient.get<Compra[]>(`${this.API_URL}api/Compras/compra/`);
+    const request$ = this.httpClient.get<Compra[]>(`${this.API_URL}api/Compra/compra/`);
     let listaCompras = await lastValueFrom(request$);
 
     listaCompras=listaCompras.filter((Compra) =>
@@ -77,7 +77,7 @@ export class PerfilComponent implements OnInit {
   }
 
   async getPedidos(){
-    const request$ = this.httpClient.get<ProductoPedido[]>(`${this.API_URL}api/Compras/historialDeProductos/`);
+    const request$ = this.httpClient.get<ProductoPedido[]>(`${this.API_URL}api/Compra/historialDeProductos/`);
     this.listaPedidos=await lastValueFrom(request$);
 
     this.listaPedidos = this.listaPedidos.filter((Product) =>

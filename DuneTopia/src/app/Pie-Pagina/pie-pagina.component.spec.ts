@@ -7,11 +7,9 @@ describe('PiePaginaComponent', () => {
   let fixture: ComponentFixture<PiePaginaComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
+    TestBed.configureTestingModule({
       imports: [PiePaginaComponent]
     })
-    .compileComponents();
-    
     fixture = TestBed.createComponent(PiePaginaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

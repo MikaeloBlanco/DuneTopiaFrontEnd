@@ -7,11 +7,9 @@ describe('LogueoComponent', () => {
   let fixture: ComponentFixture<LogueoComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
+    TestBed.configureTestingModule({
       imports: [LogueoComponent]
     })
-    .compileComponents();
-    
     fixture = TestBed.createComponent(LogueoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

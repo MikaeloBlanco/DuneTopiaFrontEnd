@@ -1,1 +1,21 @@
-<p>catalog works!</p>
+<div class="divBuscador">
+    <input class="buscador" type="text" placeholder="🔍︎" [(ngModel)]="filtroNombre" (keyup)="aplicarFiltros()"/>
+    
+    <select (change)="ordenar($event)">
+      <option value="0" [ngValue]="0">A-Z</option>
+      <option value="2" [ngValue]="2">Z-A</option>
+      <option value="1" [ngValue]="1">€⭣</option>
+      <option value="3" [ngValue]="3">€⭡</option>
+    </select>
+</div>
+<div class="contenedor">
+      <div *ngFor="let p of listaMostrada">
+        <div [routerLink]="'/detalle/'+p.id">
+          <img class="imagen-producto" [src]="API_URL + p.image" alt="foto de {{p.nombre}}">
+          <p>{{ p.nombre }}</p>
+          
+          <p *ngIf="p.stock>0" class="StockP">{{p.precio}}€</p>
+          <p *ngIf="p.stock==0" class="StockN">{{p.precio}}€</p>
+        </div>
+      </div>
+</div>

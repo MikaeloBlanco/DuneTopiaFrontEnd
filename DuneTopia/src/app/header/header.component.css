@@ -1,0 +1,67 @@
+.header{
+    text-align: center;
+    cursor: pointer;
+    background-color: rgb(20, 20, 20);
+}
+.opciones{
+    display: flex;
+    width: 100%;
+    height: 6em;
+    background-color: rgb(11, 227, 235);
+    align-items: center;
+    color: black;
+}
+
+.caja{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    min-width: 55px;
+    height: 50%;
+    font-size: 55%;
+    font-weight: bold;
+    border: 2px solid rgb(136, 136, 136);
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(11, 227, 235);
+    margin-left: 1.3%;
+}
+.caja:hover{
+    background-color: rgb(11, 167, 175);
+}
+
+.imagen-Logueo, .imagen-carro, .imagen-de-administrador{
+    width: 4.3vw;
+    height: 4.3vw;
+    min-width: 25px;
+    min-height: 25px;
+    margin: 5px;
+    cursor: pointer;
+}
+.imagen-Logueo:hover{
+    background-color: rgb(11, 133, 139);
+    border-radius: 100%;
+}
+.imagen-Logueo:hover,.imagen-carro:hover,.imagen-de-administrador:hover{
+    width: 5vw;
+    width: 5vw;
+}
+.carrito{
+    position: relative;
+    cursor: pointer;
+}
+.Cantitas{
+    background-color: rgb(221, 5, 5);
+    border-radius: 100%;
+    margin-right: -3%;
+    margin-top: -3%;
+    z-index: 3;
+    width: 2.8vh;
+    height: 2.8vh;
+}
+.logo{
+    margin-top: -2%;
+    width: 50%;
+    height: 50%;
+}

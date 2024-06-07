@@ -7,11 +7,9 @@ describe('AdminComponent', () => {
   let fixture: ComponentFixture<AdminComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
+    TestBed.configureTestingModule({
       imports: [AdminComponent]
     })
-    .compileComponents();
-    
     fixture = TestBed.createComponent(AdminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

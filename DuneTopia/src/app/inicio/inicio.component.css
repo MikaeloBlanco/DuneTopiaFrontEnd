@@ -1,0 +1,8 @@
+.Contenedor{
+    display: grid;
+    width: 100%;
+    height: 20%;
+}
+.imagenProducto{
+    opacity: .95;
+}

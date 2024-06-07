@@ -7,11 +7,9 @@ describe('PerfilComponent', () => {
   let fixture: ComponentFixture<PerfilComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
+    TestBed.configureTestingModule({
       imports: [PerfilComponent]
     })
-    .compileComponents();
-    
     fixture = TestBed.createComponent(PerfilComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

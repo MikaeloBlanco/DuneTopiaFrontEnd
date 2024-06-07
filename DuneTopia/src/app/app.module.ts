@@ -32,14 +32,14 @@ import { LogueoComponent } from './logueo/logueo.component';
         LogueoComponent,
         RegistroComponent
     ],
-    providers: [],
-    bootstrap: [AppComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
-    ]
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

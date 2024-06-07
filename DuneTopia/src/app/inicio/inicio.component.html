@@ -1,17 +1,8 @@
 <div class="Contenedor">
     <div *ngFor="let p of listaProductos">
-        <div id="Carrusel" class="carrusel" data-ride="carrusel">
-        <ol class="indicador-carrusel">
-            <li data-target="#Carrusel" data-slide-to={{p.id}} class="active"></li>
-        </ol>
-        </div>
-        <div [routerLink]="'/detalle/'+p.id">
-            <div class="carrusel-interno" role="listbox">
-                <div class="item active">
-                    <img class="imagenProducto" [src]="API_URL + p.image" alt="foto de {{p.nombre}}">
-                    <p>{{ p.nombre }}</p>
-                </div>
-            </div>
+     <div [routerLink]="'/detalle/'+p.id">
+            <img class="imagenProducto" [src]="API_URL + p.image" alt="foto de {{p.nombre}}">
+            <p>{{ p.nombre }}</p>
         </div>
     </div>
 </div>

@@ -37,7 +37,7 @@ export class RegistroComponent {
       formData.append('direccion', this.myForm.get('direccion')?.value);
 
       if(this.myForm.get('confirmPassword')?.value == this.myForm.get('password')?.value){
-        const request$ = this.httpClient.post<string>(`${this.API_URL}api/Usuario/logueo`, formData);
+        const request$ = this.httpClient.post<string>(`${this.API_URL}api/Usuario/registro`, formData);
         await lastValueFrom(request$);
 
         alert('Registro completado');

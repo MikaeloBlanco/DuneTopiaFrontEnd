@@ -1,0 +1,103 @@
+@media screen and (max-width: 768px) {
+    .lista-carrito {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+    }
+}
+
+.contenedor{
+    display: flex;
+    background-color: black;
+}
+
+.lista-carrito{
+    width: 100%;
+    margin: 20px;
+}
+
+.table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,td {
+    border: 1px solid rgb(13, 204, 194);
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: rgb(13, 204, 194);
+}
+
+.imagen-producto{
+    width: 135px;
+}
+
+.boon-eliminar img{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.nombre {
+    font-weight: bold;
+}
+
+.cantidad{
+    width: 50px;
+}
+
+.precioTotal{
+    font-size: 18px;
+}
+
+.Confirmar button img{
+    width: 210px;
+}
+
+.Confirmar button{
+    background: rgb(160, 160, 160);
+    border: none;
+}
+
+.boon-eliminar button{
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.subtotal{
+    font-weight: bold;
+}
+.cantidad{
+    display: flex;
+    align-items: center;
+}
+
+.icantidad input[type="number"]{
+    width: 30px;
+    padding: 8px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.icantidad input[type="number"]:focus{
+    border-color: rgb(220, 220, 220);
+    box-shadow: 0 0 5px rgb(155, 155, 155);
+}
+
+.icantidad input[type="number"]::-webkit-inner-spin-button,
+.icantidad input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: scrollbarbutton-down;
+  margin: 0;
+}
+
+.Confirmar:hover{
+    cursor: pointer;
+    background-color: rgb(160, 160, 160);
+    border-radius: 10px;
+}

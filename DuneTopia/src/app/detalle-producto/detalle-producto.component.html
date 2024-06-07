@@ -1,1 +1,20 @@
-<p>detalle-producto works!</p>
+<div class="contenedor" *ngIf="detallesProducto">
+    <div>
+        <img class="imagen-producto" [src]="API_URL + detallesProducto.image" alt="foto de {{detallesProducto.nombre}}">
+    </div>
+
+    <div *ngIf="detallesProducto">
+        <h1>{{ detallesProducto.nombre }}</h1>
+        <p>{{ detallesProducto.descripcion }}</p>
+        <h2 *ngIf="detallesProducto.stock>0" class="StockP">{{detallesProducto.precio}}€</h2>
+        <h2 *ngIf="detallesProducto.stock==0" class="StockN">{{detallesProducto.precio}}€</h2>
+        <div class="Cantidad">
+            <form [formGroup]="formulario">
+                <a>Cantidad: </a>
+                <input type="number" formControlName="cantidad" max="{{detallesProducto.stock}}" class="cantidad" min = 1 value = 1>
+            </form>
+        </div>
+        <button *ngIf="detallesProducto.stock>0" class="añadir" (click)="anadirCarrito()"><img class="imagen-carro-anadir" src="assets\Imagenes\Carroañadir.png" alt=""></button>
+        <a *ngIf="detallesProducto.stock==0">No hay stock disponible</a>
+    </div>
+</div>

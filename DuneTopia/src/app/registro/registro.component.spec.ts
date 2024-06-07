@@ -7,10 +7,9 @@ describe('RegistroComponent', () => {
   let fixture: ComponentFixture<RegistroComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
+    TestBed.configureTestingModule({
       imports: [RegistroComponent]
     })
-    .compileComponents();
     
     fixture = TestBed.createComponent(RegistroComponent);
     component = fixture.componentInstance;

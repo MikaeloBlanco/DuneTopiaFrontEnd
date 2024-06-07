@@ -7,11 +7,9 @@ describe('DetalleProductoComponent', () => {
   let fixture: ComponentFixture<DetalleProductoComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
+    TestBed.configureTestingModule({
       imports: [DetalleProductoComponent]
     })
-    .compileComponents();
-    
     fixture = TestBed.createComponent(DetalleProductoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

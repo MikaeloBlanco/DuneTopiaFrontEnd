@@ -7,11 +7,9 @@ describe('CarritoComponent', () => {
   let fixture: ComponentFixture<CarritoComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
+    TestBed.configureTestingModule({
       imports: [CarritoComponent]
     })
-    .compileComponents();
-    
     fixture = TestBed.createComponent(CarritoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

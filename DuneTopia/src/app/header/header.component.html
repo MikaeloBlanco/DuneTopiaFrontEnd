@@ -1,1 +1,18 @@
-<p>Se muestra</p>
+<div><h1 class="cabezera"><img class="logo" src="assets\Imagenes\preview.png" [routerLink]="'/home'" alt="Logo de DuneTopia"></h1>
+
+<div class="opciones">
+    <div [routerLink]="'/home'" class="caja">Inicio</div>
+    <div [routerLink]="'/catalogo'" class="caja">Catálogo</div>
+        <div class="botones">
+            <div *ngIf="carritoConteniente" class="Cantitas">&nbsp;{{cantidadProductosCarrito}}&nbsp;&nbsp;</div>
+                <div class="carrito" [ngStyle]="{ '--continente-carro': cantidadProductosCarrito}">
+                    <img class="imagen-carro" src="src\assets\Imagenes\Carro.png" [routerLink]="'carrito'" alt="carrito">
+                </div>
+            <div class="logueo">
+                <img *ngIf="!estaLogueado" class="imagen-Logueo" src="assets\Imagenes\persona.png" [routerLink]="'/logueo'" alt="Imagen de Logueo">
+                <img *ngIf="estaLogueado" class="imagen-Logueo" src="assets\Imagenes\persona.png" [routerLink]="'/perfil'" alt="imagen de usuario"></div>
+            <div *ngIf="isAdmin" class="boton-moderador">
+            <img class="imagen-de-administrador" src="assets\Imagenes\admin.png" [routerLink]="'/admin'" alt="Poderes Administrativos">
+            </div>
+        </div>
+</div>

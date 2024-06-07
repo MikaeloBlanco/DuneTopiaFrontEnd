@@ -11,5 +11,42 @@ export class HeaderComponent implements OnInit {
     
   }
   ngOnInit(): void {
+    this.getCantidad()
+    this.getLogueo()
+  }
+
+  cantidadProductosCarrito: number = 0;
+  carritoConteniente: boolean = false;
+  estaLogueado: boolean = false;
+  isAdmin: boolean = false;
+
+  getCantidad(){
+    this.servicio.getCantidadCarrito(1).then(cantidad => {
+      this.cantidadProductosCarrito = cantidad;
+      this.carritoConteniente = this.cantidadProductosCarrito>0;
+    });
+  }
+
+  async getLogueo(){
+    let usuarioID = localStorage.getItem("ID") || sessionStorage.getItem("ID") || '';
+
+    if(usuarioID !== ''){
+      this.estaLogueado = true;
+
+      try{
+        const user = await this.servicio.getUserInfo(usuarioID);
+
+        if(user){
+          this.isAdmin = user.isAdmin === true;
+          console.log('Logueo:', this.estaLogueado);
+          console.log('Administrador:', this.isAdmin);
+        } else {
+          this.isAdmin = false;
+          console.log('Logueo:', this.estaLogueado);
+        }
+      } catch(error){
+        console.error('Fallo en la adquisición de los datos de usuario:', error);
+      }
+    }
   }
 }

@@ -1,0 +1,66 @@
+@media screen and (max-width: 768px) {
+    .contenedor {
+      flex-direction: column;
+    }
+}
+
+.contenedor{
+    display: flex;
+    align-items: center;
+    background-color: rgb(37, 37, 37);
+    background-size: auto;
+}
+
+.StockN{
+    color: red;
+}
+.StockP{
+    color: rgb(38, 211, 38);
+}
+.imagen-producto{
+    width: 70%;
+    margin-right: 20px;
+}
+.contenedor > div{
+    width: 70%;
+}
+.imagen-carro-anadir {
+    width: 5%;
+}
+.contenedor > div > p {
+    white-space: pre-line;
+    margin: 0;
+}
+.cantidad{
+    display: flex;
+    align-items: center;
+}
+
+.cantidad input[type="number"]{
+    width: 30px;
+    padding: 8px;
+    border: 1px solid rgb(155, 155, 155);
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.cantidad input[type="number"]:focus {
+    border-color: rgb(10, 180, 195);
+    box-shadow: 0 0 5px rgb(70, 130, 145);
+}
+
+.cantidad input[type="number"]::-webkit-inner-spin-button,
+.cantidad input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: scrollbarbutton-down;
+    margin: 0;
+}
+.añadir{
+    padding: 10;
+}
+.añadir img {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+}

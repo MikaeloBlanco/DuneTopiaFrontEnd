@@ -1,1 +1,15 @@
-<p>compra works!</p>
+<div class="contenedor">
+    <div class="pago">
+        <p><b>Precio Total: {{(precioTotal).toFixed(2)}}€</b></p>
+        <button (click)="buyProducts()">Pagar</button>
+    </div>
+    <div class="producto">
+        <div *ngFor="let p of carritoDeUsuario; let i = index" class="iProducto">
+            <img class="imagen-producto" [src]="API_URL + p.image" alt="Foto de producto">
+            <br>
+            <p class="nombre"><b>{{p.nombre}}</b></p>
+            <p>Cantidad: <b>{{carritoConProductos[i].cantidad}}</b></p>
+            <a class="subtotal">Subtotal: <b>{{p.precio * carritoConProductos[i].cantidad}}€</b></a>
+        </div>
+    </div>
+</div>
