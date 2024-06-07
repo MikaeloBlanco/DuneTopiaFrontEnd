@@ -6,7 +6,7 @@ import { Product } from '../model/Product';
 @Component({
   selector: 'app-catalog',
   templateUrl: './catalog.component.html',
-  styleUrl: './catalog.component.css'
+  styleUrls: ['./catalog.component.css']
 })
 export class CatalogComponent implements OnInit{
     constructor(private httpClient: HttpClient, private servicioService: ServicioService){

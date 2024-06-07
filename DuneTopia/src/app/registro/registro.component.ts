@@ -8,7 +8,7 @@ import { lastValueFrom } from 'rxjs';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
-  styleUrl: './registro.component.css'
+  styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent {
     API_URL: string = 'https://localhost:7093/';

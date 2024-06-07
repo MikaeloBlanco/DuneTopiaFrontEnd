@@ -10,7 +10,7 @@ import { lastValueFrom } from 'rxjs';
 @Component({
   selector: 'app-carrito',
   templateUrl: './carrito.component.html',
-  styleUrl: './carrito.component.css'
+  styleUrls: ['./carrito.component.css']
 })
 export class CarritoComponent implements OnInit{
   constructor(private httpClient: HttpClient, private servicioService: ServicioService, private formBuilder: FormBuilder, private router: Router){

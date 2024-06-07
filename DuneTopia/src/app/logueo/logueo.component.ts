@@ -7,7 +7,7 @@ import { lastValueFrom } from 'rxjs';
 @Component({
   selector: 'app-logueo',
   templateUrl: './logueo.component.html',
-  styleUrl: './logueo.component.css'
+  styleUrls: ['./logueo.component.css']
 })
 export class LogueoComponent {
   API_URL: string = 'https://localhost:7093/';

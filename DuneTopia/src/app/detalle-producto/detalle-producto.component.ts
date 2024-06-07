@@ -8,7 +8,7 @@ import { Subscription, lastValueFrom } from 'rxjs';
 @Component({
   selector: 'app-detalle-producto',
   templateUrl: './detalle-producto.component.html',
-  styleUrl: './detalle-producto.component.css'
+  styleUrls: ['./detalle-producto.component.css']
 })
 export class DetalleProductoComponent implements OnInit {
 

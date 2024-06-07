@@ -4,7 +4,7 @@ import { ServicioService } from '../servicio.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
   constructor(private servicio: ServicioService){
