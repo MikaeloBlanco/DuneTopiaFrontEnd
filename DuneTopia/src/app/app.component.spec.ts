@@ -24,6 +24,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('DuneTopia Is working');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('DuneTopia app is running!');
   });
 });

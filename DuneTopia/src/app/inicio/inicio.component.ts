@@ -10,7 +10,7 @@ import { Product } from '../model/Product';
 })
 export class InicioComponent implements OnInit{
 
-  constructor(private httpClient:HttpClient, private servicioService:ServicioService){
+  constructor(private servicioService:ServicioService){
 
   }
 
@@ -20,7 +20,7 @@ export class InicioComponent implements OnInit{
       });
   }
 
-  API_URL: string = 'https://localhost:7093/';
+  API_URL: string = 'https://localhost:7143/';
   listaProductos: Product[]=[];
   
 }

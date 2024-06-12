@@ -21,7 +21,7 @@ export class CatalogComponent implements OnInit{
         });
     }
 
-    API_URL: string = 'https://localhost:7093/';
+    API_URL: string = 'https://localhost:7143/';
     listaMostrada: Product[] = [];
     listaProductos: Product[] = [];
     orden: number = 0;

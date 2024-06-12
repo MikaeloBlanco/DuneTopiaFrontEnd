@@ -16,7 +16,7 @@ export class AdminComponent implements OnInit {
     usuario: Usuario | undefined;
     listaUsuarios: Usuario[] = [];
     listaProductos: Product[] = [];
-    API_URL: string = 'https://localhost:7093/';
+    API_URL: string = 'https://localhost:7143/';
     formulario: FormGroup;
     mostrarFormularioProducto: boolean = false;
     idProductoSeleccionado: number | null = null;

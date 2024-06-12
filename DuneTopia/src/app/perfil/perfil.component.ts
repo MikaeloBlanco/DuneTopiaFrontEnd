@@ -33,13 +33,14 @@ export class PerfilComponent implements OnInit {
         alert('Se requiere de iniciar sesión');
         this.router.navigate(['/']);
       }else {
+        this.getCompras()
         this.getUsuario()
       }
   }
   usuarioId = localStorage.getItem("ID") || sessionStorage.getItem("ID") || '';
   cambiarDatos: boolean=false;
   usuario: any;
-  API_URL: string = 'https://localhost:7093/';
+  API_URL: string = 'https://localhost:7143/';
   listaPedidos: ProductoPedido[]=[];
   listaComprasId: string[]=[];
   listaPedidosTotal: Pedido[]=[];

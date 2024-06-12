@@ -27,7 +27,7 @@ export class CompraComponent implements OnInit{
     });
   }
 
-  API_URL: string = 'https://localhost:7093/';
+  API_URL: string = 'https://localhost:7143/';
   formulario: FormGroup;
   carritoConProductos: ProductoCarrito[] = [];
   usuarioId = localStorage.getItem("ID") || sessionStorage.getItem("ID") || '';

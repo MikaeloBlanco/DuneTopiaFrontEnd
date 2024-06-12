@@ -10,7 +10,7 @@ import { lastValueFrom } from 'rxjs';
   styleUrls: ['./logueo.component.css']
 })
 export class LogueoComponent {
-  API_URL: string = 'https://localhost:7093/';
+  API_URL: string = 'https://localhost:7143/';
 
   myForm: FormGroup;
   email: string = '';

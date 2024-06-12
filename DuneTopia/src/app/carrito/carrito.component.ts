@@ -22,7 +22,7 @@ export class CarritoComponent implements OnInit{
       this.getCarrito();
   }
   formulario: FormGroup;
-  API_URL: string = 'https://localhost:7093/';
+  API_URL: string = 'https://localhost:7143/';
   carritoConProductos: ProductoCarrito[] = [];
   idUsuario = localStorage.getItem("ID") || sessionStorage.getItem("ID") || '';
   carritoUsuario: Product[] = []

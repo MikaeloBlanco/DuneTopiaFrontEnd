@@ -32,7 +32,7 @@ export class DetalleProductoComponent implements OnInit {
         })
     }
 
-    API_URL: string = 'https://localhost:7093/';
+    API_URL: string = 'https://localhost:7143/';
     detallesProducto: any;
     id: number = 0;
     formulario: FormGroup;
