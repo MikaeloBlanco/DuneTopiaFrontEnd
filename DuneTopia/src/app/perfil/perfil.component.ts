@@ -50,7 +50,7 @@ export class PerfilComponent implements OnInit {
 
   async getUsuario(){
     try{
-      const request$ = this.httpClient.get<Usuario[]>(`${this.API_URL}api/Usuario/Listausuario/`);
+      const request$ = this.httpClient.get<Usuario[]>(`${this.API_URL}api/Usuario/listaUsuarios/`);
       let lista=await lastValueFrom(request$);
 
       lista = lista.filter((usuario) =>

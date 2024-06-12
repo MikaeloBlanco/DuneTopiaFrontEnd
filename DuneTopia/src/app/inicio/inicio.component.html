@@ -1,6 +1,6 @@
 <div class="Contenedor">
     <div *ngFor="let p of listaProductos">
-     <div [routerLink]="'/detalle/'+p.id">
+     <div>
             <img class="imagenProducto" [src]="API_URL + p.image" alt="foto de {{p.nombre}}">
             <p>{{ p.nombre }}</p>
         </div>

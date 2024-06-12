@@ -72,7 +72,7 @@ export class AdminComponent implements OnInit {
         formData.append('Precio', this.formulario.get('precio')?.value);
         formData.append('Stock', this.formulario.get('stock')?.value);
 
-        this.httpClient.put(`${this.API_URL}api/Producto/modificarProducto/${this.idProductoSeleccionado}`,formData).subscribe(
+        this.httpClient.put(`${this.API_URL}api/Producto/modifyProducto/${this.idProductoSeleccionado}`,formData).subscribe(
           (response: any) => {
             console.log('Producto completamente Modificado: ', response);
             this.getListaProductos();
@@ -88,7 +88,7 @@ export class AdminComponent implements OnInit {
     }
 
     getListaProductos(){
-      this.httpClient.get<Product[]>(`${this.API_URL}api/Product/detalleProducto/`).subscribe((data: Product[]) => { this.listaProductos = data });
+      this.httpClient.get<Product[]>(`${this.API_URL}api/Producto/detalleProducto/`).subscribe((data: Product[]) => { this.listaProductos = data });
     }
 
     eliminarUsuario(idUsuario: number): void{
@@ -125,7 +125,7 @@ export class AdminComponent implements OnInit {
           formData.append('Stock', this.formulario.get('stock')?.value);
           formData.append('Fichero', this.ficheroSeleccionado!);
 
-          this.httpClient.put(`${this.API_URL}api/Producto/modificarProducto/${this.idProductoSeleccionado}`, formData).subscribe(
+          this.httpClient.put(`${this.API_URL}api/Producto/modifyProducto/${this.idProductoSeleccionado}`, formData).subscribe(
             (response: any) => {
               console.log('Producto completamente Modificado: ', response);
               this.getListaProductos();

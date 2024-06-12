@@ -67,7 +67,7 @@ export class CarritoComponent implements OnInit{
     formData.append('idProducto', productoId.toString());
     formData.append('idUsuario', this.idUsuario);
     try{
-      const request$ = this.httpClient.put<string>(`${this.API_URL}api/CarritoProducto/eliminarProducto/`, formData);
+      const request$ = this.httpClient.put<string>(`${this.API_URL}api/ProductoCarro/eliminarProducto/`, formData);
       this.reloadWindowAfterDelay(150);
       await lastValueFrom(request$);
     } catch(error){
@@ -81,7 +81,7 @@ export class CarritoComponent implements OnInit{
     formData.append('cantidad', cantidad.toString());
 
     try {
-      const request$ = this.httpClient.put<string>(`${this.API_URL}api/CarritoProducto/cambiarCantidad`, formData);
+      const request$ = this.httpClient.put<string>(`${this.API_URL}api/ProductoCarro/cambiarCantidad`, formData);
       this.reloadWindowAfterDelay(1500);
       await lastValueFrom(request$);
     } catch (error){

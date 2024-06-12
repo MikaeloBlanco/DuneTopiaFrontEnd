@@ -1,4 +1,4 @@
-.header{
+.cabezera{
     text-align: center;
     cursor: pointer;
     background-color: rgb(20, 20, 20);
@@ -18,7 +18,7 @@
     justify-content: center;
     width: 10%;
     min-width: 55px;
-    height: 50%;
+    height: 55%;
     font-size: 55%;
     font-weight: bold;
     border: 2px solid rgb(136, 136, 136);
@@ -32,10 +32,10 @@
 }
 
 .imagen-Logueo, .imagen-carro, .imagen-de-administrador{
-    width: 4.3vw;
-    height: 4.3vw;
-    min-width: 25px;
-    min-height: 25px;
+    width: 3.0vw;
+    height: 3.0vw;
+    min-width: 20px;
+    min-height: 20px;
     margin: 5px;
     cursor: pointer;
 }
@@ -44,8 +44,8 @@
     border-radius: 100%;
 }
 .imagen-Logueo:hover,.imagen-carro:hover,.imagen-de-administrador:hover{
-    width: 5vw;
-    width: 5vw;
+    width: 3.2vw;
+    height: 3.2vw;
 }
 .carrito{
     position: relative;
@@ -61,7 +61,8 @@
     height: 2.8vh;
 }
 .logo{
-    margin-top: -2%;
-    width: 50%;
-    height: 50%;
+    width: 25%;
+    height: 25%;
+    align-content: center;
+    background: black;
 }

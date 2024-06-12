@@ -24,7 +24,7 @@ export class RegistroComponent {
         nombre: ['', Validators.required],
         email: ['', [Validators.required, Validators.email]],
         password: ['', Validators.required],
-        comfirmPassword: ['',Validators.required],
+        confirmPassword: ['',Validators.required],
         direccion: ['', Validators.required]
       })
     }
@@ -36,7 +36,7 @@ export class RegistroComponent {
       formData.append('password', this.myForm.get('password')?.value);
       formData.append('direccion', this.myForm.get('direccion')?.value);
 
-      if(this.myForm.get('comfirmPassword')?.value == this.myForm.get('password')?.value){
+      if(this.myForm.get('confirmPassword')?.value == this.myForm.get('password')?.value){
         const request$ = this.httpClient.post<string>(`${this.API_URL}api/Usuario/registro`, formData);
         await lastValueFrom(request$);
 
