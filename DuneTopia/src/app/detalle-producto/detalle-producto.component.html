@@ -1,6 +1,6 @@
 <div class="contenedor" *ngIf="detallesProducto">
     <div>
-        <img class="imagen-producto" [src]="API_URL + detallesProducto.image" alt="foto de {{detallesProducto.nombre}}">
+        <img class="imagen-producto" [src]="API_URL + detallesProducto.imagen" alt="foto de {{detallesProducto.nombre}}">
     </div>
 
     <div *ngIf="detallesProducto">
@@ -14,7 +14,7 @@
                 <input type="number" formControlName="cantidad" max="{{detallesProducto.stock}}" class="cantidad" min = 1 value = 1>
             </form>
         </div>
-        <button *ngIf="detallesProducto.stock>0" class="añadir" (click)="anadirCarrito()"><img class="imagen-carro-anadir" src="assets\Imagenes\Carroañadir.png" alt=""></button>
+        <button *ngIf="detallesProducto.stock>0" class="añadir" (click)="anadirCarrito()"><img class="imagen-carro-anadir" src="/src/assets/Imagenes/Carroañadir.png" alt=""></button>
         <a *ngIf="detallesProducto.stock==0">No hay stock disponible</a>
     </div>
 </div>
