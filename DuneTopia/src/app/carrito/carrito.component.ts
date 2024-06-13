@@ -24,7 +24,7 @@ export class CarritoComponent implements OnInit{
   formulario: FormGroup;
   API_URL: string = 'https://localhost:7143/';
   carritoConProductos: ProductoCarrito[] = [];
-  idUsuario = localStorage.getItem("ID") || sessionStorage.getItem("ID") || '';
+  usuarioId = localStorage.getItem("ID") || sessionStorage.getItem("ID") || '';
   carritoUsuario: Product[] = []
   valoresSpinners: number[] = []
   precioTotal: number = 0;
@@ -32,20 +32,17 @@ export class CarritoComponent implements OnInit{
   valorSpinner: number = 0;
 
   getCarrito(){
-    var stringIdUsuario = sessionStorage.getItem("ID");
-    if(!stringIdUsuario){
-      alert("Por favor, Logueese primero");
-      this.router.navigate(['/logueo']);
-    }
+    var stringIdUsuario = this.usuarioId;
     if(stringIdUsuario){
       const idUsuario = Number.parseInt(stringIdUsuario);
       this.servicioService.getProductosCarrito(idUsuario).then(products => {
-        products = products.filter((ProductoCarrito) => ProductoCarrito.idCarrito==idUsuario);
+        products = products.filter((ProductoCarrito) => 
+          ProductoCarrito.carroDeCompraId==idUsuario);
         this.carritoConProductos = products;
         for ( let p of this.carritoConProductos){
-          console.log(p.idProducto);
-          this.getProducto(p.idProducto);
-          console.log("BATMANNNNN")
+          console.log(p.productoId);
+          this.getProducto(p.productoId);
+          console.log()
         }
         console.log(this.carritoConProductos)
       });
@@ -55,17 +52,19 @@ export class CarritoComponent implements OnInit{
     this.servicioService.getProductos().then(products => {
       products = products.filter((Product) => Product.id == id);
       this.carritoUsuario.push(products[0]);
-      this.precioTotal+=(products[0].precio*this.carritoConProductos[this.contador].cantidad);
+      this.precioTotal+=(products[0].price*this.carritoConProductos[this.contador].cantidad);
       this.valoresSpinners.push(this.carritoConProductos[this.contador].cantidad);
       this.contador++;
     });
   }
+
+
   
   async eliminarProducto(productoId : number){
     const formData = new FormData();
-    const key = 'idProducto' + productoId.toString();
-    formData.append('idProducto', productoId.toString());
-    formData.append('idUsuario', this.idUsuario);
+    const key = 'productoId' + productoId.toString();
+    formData.append('productoId', productoId.toString());
+    formData.append('usuarioId', this.usuarioId);
     try{
       const request$ = this.httpClient.put<string>(`${this.API_URL}api/ProductoCarro/eliminarProducto/`, formData);
       this.reloadWindowAfterDelay(150);
@@ -76,8 +75,8 @@ export class CarritoComponent implements OnInit{
   }
   async actualizarCantidad(productoId: number, cantidad:number){
     const formData = new FormData();
-    formData.append('idProducto', productoId.toString());
-    formData.append('idUsuario', this.idUsuario);
+    formData.append('productoId', productoId.toString());
+    formData.append('usuarioId', this.usuarioId);
     formData.append('cantidad', cantidad.toString());
 
     try {

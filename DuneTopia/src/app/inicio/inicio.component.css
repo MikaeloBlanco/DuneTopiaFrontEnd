@@ -1,8 +1,21 @@
 .Contenedor{
     display: grid;
-    width: 100%;
-    height: 20%;
+    gap: 200 px;
+    background-color: rgb(41, 41, 41);
+    color: white;
 }
+
+p {
+    text-align: center;
+}
+
+.Contenedor > div {
+    text-align: center;
+    margin-top: 20px;
+}
+
 .imagenProducto{
-    opacity: .95;
+    opacity: .90;
+    width: 30vw;
+    margin-top: 10%;
 }

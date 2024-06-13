@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../servicio.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,7 @@ import { ServicioService } from '../servicio.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  constructor(private servicio: ServicioService){
+  constructor(private servicio: ServicioService, private router: Router){
     
   }
   ngOnInit(): void {
@@ -47,6 +48,12 @@ export class HeaderComponent implements OnInit {
       } catch(error){
         console.error('Fallo en la adquisición de los datos de usuario:', error);
       }
+    }
+  }
+  negacionAcceso(){
+    if (!this.estaLogueado){
+      alert("Inicia Sesión");
+      this.router.navigate(['/logueo']);
     }
   }
 }

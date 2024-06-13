@@ -5,8 +5,8 @@
 }
 .contenedor{
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(20px,1fr));
-    gap: 30 px;
+    grid-template-columns: repeat(auto-fill,minmax(300px,15fr));
+    gap: 200 px;
     background-color: rgb(41, 41, 41);
     color: white;
 }
@@ -22,7 +22,7 @@
 }
 
 .imagen-producto{
-    width: 15vw;
+    width: 10vw;
     cursor: pointer;
 }
 .divBuscador {

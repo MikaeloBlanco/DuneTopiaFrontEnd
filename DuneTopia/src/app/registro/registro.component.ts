@@ -21,7 +21,7 @@ export class RegistroComponent {
 
     constructor(private formBuilder: FormBuilder, private httpClient: HttpClient, private router: Router) {
       this.myForm = this.formBuilder.group({
-        nombre: ['', Validators.required],
+        name: ['', Validators.required],
         email: ['', [Validators.required, Validators.email]],
         password: ['', Validators.required],
         confirmPassword: ['',Validators.required],
@@ -31,7 +31,7 @@ export class RegistroComponent {
 
     async uploadRegister(){
       const formData = new FormData();
-      formData.append('nombre', this.myForm.get('nombre')?.value);
+      formData.append('name', this.myForm.get('name')?.value);
       formData.append('email',this.myForm.get('email')?.value);
       formData.append('password', this.myForm.get('password')?.value);
       formData.append('direccion', this.myForm.get('direccion')?.value);

@@ -2,8 +2,8 @@
     <div class = "enlace-logueo" [routerLink]="'/logueo'">¿Estas registrado? Inicia Sesión Aquí.</div>
     <form class="formulario-registro" [formGroup]="myForm" (ngSubmit)="uploadRegister()">
         <h2>Registro</h2>
-        <label for ="nombre">Nombre:</label>
-        <input class="registro-input" type="text" formControlName="nombre" placeholder="Ingrese su nombre. Ej(Juan, Jose, John)">
+        <label for ="name">Nombre:</label>
+        <input class="registro-input" type="text" formControlName="name" placeholder="Ingrese su nombre. Ej(Juan, Jose, John)">
 
         <label for ="email">Correo Electronico:</label>
         <input class="registro-input" type="email" formControlName="email" placeholder="Ingrese su correo aquí.">

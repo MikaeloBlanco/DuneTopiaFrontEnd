@@ -1,4 +1,11 @@
 <div class="Contenedor">
+    <p>Bienvenido a la tienda de claves DuneTopia. Aqui podrás adquirir tus claves a un precio razonable sin que te cuesten 60$ 
+        pagar por tu juego favorito.
+    </p>
+    <p> Desde aquí puedes ver la variedad de juegos que de momento tenemos en disponibles, sea en stock o sin el. Esperemos que encuentres tu juego favorito </p>
+    <br>
+    <br>
+    <br>
     <div *ngFor="let p of listaProductos">
      <div>
             <img class="imagenProducto" [src]="API_URL + p.image" alt="foto de {{p.nombre}}">

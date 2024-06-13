@@ -13,18 +13,18 @@
             <tbody>
                 <tr *ngFor="let p of carritoUsuario; let i = index" class="porProducto">
                     <td>
-                        <img class="imagne-producto" [src]="API_URL + p.image" alt="">
+                        <img class="imagen-producto" [src]="API_URL + p.image" alt="">
                         <br>
                         <b class="nombre">{{ p.nombre }}</b>
                     </td>
-                    <td class="precio">{{ p.precio }}€</td>
+                    <td class="precio">{{ p.price }}€</td>
                     <td class="Cantidad-eliminacion">
                         <div class="cantidad">
                             <a>Cantidad: </a>
                             <input type="number" (change)="actualizarCantidad(p.id, valoresSpinners[i])" class="iCantidad" max="{{p.stock}}" min="1" [(ngModel)]="valoresSpinners[i]">
                         </div>
                     </td>
-                    <td class="subtotal">{{ p.precio * valoresSpinners[i] }}€</td>
+                    <td class="subtotal">{{ p.price * valoresSpinners[i] }}€</td>
                     <td class="boon-eliminar">
                         <button (click)="eliminarProducto(p.id)"><img src="assets\Imagenes\goma.png" alt="Imagen de eliminación"></button>
                     </td>
@@ -34,6 +34,6 @@
     </div>
     <div class="confirmar">
         <h1 class="precioTotal">Total: {{(precioTotal).toFixed(2)}}€</h1>
-        <button [routerLink]="'/confirmar'"><img class="confirmar" stc="assets\Imagenes\Carroañadir.png" alt="Boton de confirmar"></button>
+        <button [routerLink]="'/compra'"><img class="confirmar" src="assets\Imagenes\Carroanadir.png" alt="Boton de confirmar"></button>
     </div>
 </div>

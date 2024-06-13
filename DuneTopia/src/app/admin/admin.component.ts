@@ -112,7 +112,7 @@ export class AdminComponent implements OnInit {
           this.formulario.patchValue({
             nombre: productoSeleccionado.nombre,
             descipcion: productoSeleccionado.descripcion,
-            precio: productoSeleccionado.precio,
+            precio: productoSeleccionado.price,
             stock: productoSeleccionado.stock
           });
         }

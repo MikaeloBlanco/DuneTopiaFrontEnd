@@ -46,7 +46,7 @@
                     <img class="imagen-producto" [src]="API_URL + productos.image" alt="foto de {{ productos.nombre }}">
                 </td>
                 <td>{{ productos.nombre }}</td>
-                <td>{{ productos.precio }}</td>
+                <td>{{ productos.price }}</td>
                 <td>{{ productos.stock }}</td>
             </tr>
         </tbody>
@@ -75,7 +75,7 @@
                         <input type="text" [(ngModel)] = "productos.nombre">
                     </td>
                     <td>
-                        <input type="number" [(ngModel)] = "productos.precio">
+                        <input type="number" [(ngModel)] = "productos.price">
                     </td>
                     <td>
                         <input type="number" [(ngModel)] = "productos.stock">

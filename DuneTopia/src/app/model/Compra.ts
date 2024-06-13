@@ -4,6 +4,4 @@ export interface Compra{
     idUsuario: string,
     precio: number,
     fecha: string,
-    from: string,
-    to: string
 }

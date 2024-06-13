@@ -2,7 +2,7 @@
 
 <div class="opciones">
     <div [routerLink]="'/home'" class="caja">Inicio</div>
-    <div [routerLink]="'/catalogo'" class="caja">Catálogo</div>
+    <div class="caja" [routerLink]="'/catalogo'" *ngIf="estaLogueado">Catálogo</div>
         <div class="botones">
             <div *ngIf="carritoConteniente" class="Cantitas">&nbsp;{{cantidadProductosCarrito}}&nbsp;&nbsp;</div>
                 <div class="carrito" [ngStyle]="{ '--continente-carro': cantidadProductosCarrito}">
@@ -12,7 +12,7 @@
                 <img *ngIf="!estaLogueado" class="imagen-Logueo" src="assets\Imagenes\persona.png" [routerLink]="'/logueo'" alt="Imagen de Logueo">
                 <img *ngIf="estaLogueado" class="imagen-Logueo" src="assets\Imagenes\persona.png" [routerLink]="'/perfil'" alt="imagen de usuario"></div>
             <div *ngIf="isAdmin" class="boton-moderador">
-            <img class="imagen-de-administrador" src="assets\Imagenes\admin.png" [routerLink]="'/admin'" alt="Poderes Administrativos">
+            <img class="imagen-de-administrador" src="assets\Imagenes\Admin.png" [routerLink]="'/admin'" alt="Poderes Administrativos">
             </div>
         </div>
 </div>

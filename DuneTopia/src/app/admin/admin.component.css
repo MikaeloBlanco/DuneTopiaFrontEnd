@@ -12,13 +12,13 @@ table {
 }
 
 th,td{
-    border: 1px solid rgb(230, 230, 230);
+    border: 1px solid rgb(197, 197, 197);
     padding: 8px;
     text-align: center;
 }
 
 th{
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(187, 187, 187);
 }
 
 .imagen-producto{
@@ -45,18 +45,19 @@ button img{
 }
 button{
     background: none;
-    border: none;
+    border: 10px;
 }
 
 .novo-producto{
     background-color: black;
     color: white;
     padding: 10px 20px;
-    border: none;
+    border: 10px;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 5px;
     margin-right: 5px;
+    border-color: white;
 }

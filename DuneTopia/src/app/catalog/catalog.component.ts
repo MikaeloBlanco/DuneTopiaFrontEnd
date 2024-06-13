@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from '../servicio.service';
 import { Product } from '../model/Product';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-catalog',
@@ -9,7 +10,7 @@ import { Product } from '../model/Product';
   styleUrls: ['./catalog.component.css']
 })
 export class CatalogComponent implements OnInit{
-    constructor(private httpClient: HttpClient, private servicioService: ServicioService){
+    constructor(private httpClient: HttpClient, private servicioService: ServicioService, private router: Router){
 
     }
 
@@ -26,6 +27,7 @@ export class CatalogComponent implements OnInit{
     listaProductos: Product[] = [];
     orden: number = 0;
     filtroNombre: string='';
+    usuarioId = localStorage.getItem("ID") || sessionStorage.getItem("ID") || '';
 
     filtrarPorNombre(){
       this.listaMostrada=this.listaProductos.filter((Product) =>
@@ -36,14 +38,14 @@ export class CatalogComponent implements OnInit{
       this.listaMostrada.sort((a,b) => a.nombre.localeCompare(b.nombre))
     }
     ordenarPrecio(){
-      this.listaMostrada.sort((a,b) => a.precio-b.precio)
+      this.listaMostrada.sort((a,b) => a.price-b.price)
     }
     ordenarNombreDesc(){
       this.listaMostrada.sort((a,b) => a.nombre.localeCompare(b.nombre))
       this.listaMostrada.reverse()
     }
     ordenarPrecioDesc(){
-      this.listaMostrada.sort((a,b) => a.precio-b.precio)
+      this.listaMostrada.sort((a,b) => a.price-b.price)
       this.listaMostrada.reverse();
     }
     aplicarFiltros(){
@@ -63,4 +65,5 @@ export class CatalogComponent implements OnInit{
         this.ordenarPrecioDesc()
       }
     }
-}
+  }
+

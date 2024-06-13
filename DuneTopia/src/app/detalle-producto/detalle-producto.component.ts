@@ -48,17 +48,13 @@ export class DetalleProductoComponent implements OnInit {
     }
 
     async anadirCarrito(){
-      if (this.usuarioId == ''){
-        alert("Inicia Sesión");
-        this.router.navigate(['/logueo']);
-      } else {
         const formData = new FormData();
         const options: any = { responseType:"text" };
         formData.append('idProducto', this.id.toString());
         formData.append('idUsuario', this.usuarioId);
         formData.append('cantidad', this.formulario.get('cantidad')?.value);
         try{
-          const request$ = this.httpClient.post<string>(`${this.API_URL}api/Carrito/añadiracarrito/`, formData);
+          const request$ = this.httpClient.post<string>(`${this.API_URL}api/Carrito/anadiracarrito/`, formData);
           var event: any = await lastValueFrom(request$);
           alert("Producto añadido con exito")
           window.location.reload();
@@ -66,5 +62,6 @@ export class DetalleProductoComponent implements OnInit {
           console.log(event)
         }
       }
-    }
-}
+
+      
+  }

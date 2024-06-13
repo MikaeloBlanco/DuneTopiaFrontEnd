@@ -36,7 +36,7 @@
     height: 3.0vw;
     min-width: 20px;
     min-height: 20px;
-    margin: 5px;
+    margin: 50px;
     cursor: pointer;
 }
 .imagen-Logueo:hover{
@@ -54,15 +54,22 @@
 .Cantitas{
     background-color: rgb(221, 5, 5);
     border-radius: 100%;
-    margin-right: -3%;
-    margin-top: -3%;
-    z-index: 3;
-    width: 2.8vh;
-    height: 2.8vh;
+    margin-right: -11%;
+    margin-top: -5%;
+    z-index: 2;
+    width: 1.5vh;
+    height: 1.5vh;
 }
 .logo{
-    width: 25%;
-    height: 25%;
+    width: auto;
+    height: auto;
     align-content: center;
     background: black;
+}
+.botones {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 60vw;
+  margin-right: 2.5%;
 }

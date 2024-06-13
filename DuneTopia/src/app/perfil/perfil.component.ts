@@ -70,7 +70,7 @@ export class PerfilComponent implements OnInit {
     for(let t of listaCompras){
       let compra = t;
       let productos = this.listaPedidos.filter((Product) =>
-      Product.idOrden==t.id);
+      Product.pedidosId==t.id);
       let pedidoTotal: Pedido = { compra, productos }
       this.listaPedidosTotal.push(pedidoTotal)
       this.listaComprasId.push(t.id.toString())
@@ -82,12 +82,12 @@ export class PerfilComponent implements OnInit {
     this.listaPedidos=await lastValueFrom(request$);
 
     this.listaPedidos = this.listaPedidos.filter((Product) =>
-    this.listaComprasId.includes(Product.idOrden.toString()));
-    let idCompra: number = this.listaPedidos[0].idOrden;
+    this.listaComprasId.includes(Product.pedidosId.toString()));
+    let compraId: number = this.listaPedidos[0].pedidosId;
     for(let p of this.listaPedidos){
-      if(idCompra != p.idOrden){
+      if(compraId != p.pedidosId){
         this.getProductos(this.listaPedidosTotal[this.contador].productos)
-        idCompra = p.idOrden
+        compraId = p.pedidosId
         this.contador++
       }
       this.listaPedidosTotal[this.contador].productos.push(p)

@@ -1,5 +1,5 @@
 export interface ProductoCarrito{
-    idProducto: number;
-    idCarrito: number;
+    productoId: number;
+    carroDeCompraId: number;
     cantidad: number;
 }

@@ -43,20 +43,16 @@ export class CompraComponent implements OnInit{
       const idUsuario = Number.parseInt(this.usuarioId);
       this.servicioService.getProductosCarrito(idUsuario).then(products => {
         products = products.filter((ProductoCarrito) =>
-          ProductoCarrito.idCarrito==idUsuario
+          ProductoCarrito.carroDeCompraId==idUsuario
         );
         this.carritoConProductos = products;
         for ( let p of this.carritoConProductos){
-          this.getProducto(p.idProducto);
+          this.getProducto(p.productoId);
         }
-        this.getPrecio();
         console.log(this.carritoConProductos)
       });
-    } else {
-      alert("Inicia sesión");
-      this.router.navigate(['/logueo']);
-    }
   }
+}
 
   getProducto(id:number){
     this.servicioService.getProductos().then(products => {
@@ -64,21 +60,19 @@ export class CompraComponent implements OnInit{
         Product.id == id
       );
       this.carritoDeUsuario.push(products[0]);
-      this.precioTotal+=(products[0].precio*this.carritoConProductos[this.contador].cantidad);
+      this.precioTotal+=(products[0].price*this.carritoConProductos[this.contador].cantidad);
       this.contador++;
     });
   }
 
   async buyProducts(){
     const formData = new FormData();
-    formData.append('Precio-total', this.precioTotal.toString());
+    formData.append('totalPrecio', this.precioTotal.toString());
     formData.append('idUsuario', this.usuarioId);
     let request$ = await this.httpClient.post<Compra>(`${this.API_URL}api/Confirmacion/ComprarProducto`, formData);
     var compra: any = await lastValueFrom(request$);
     console.log(compra);
-
-    const txHash = await this.Compracion(compra);
-    const exitoCompra = await this.servicioService.post(`api/Confirmacion/check/${compra.id}`, JSON.stringify(txHash));
+    const exitoCompra = await this.servicioService.post(`api/Confirmacion/check/${compra.id}`, formData);
     console.log('Transación realizada: ' + exitoCompra)
 
     const mensajeCompra = exitoCompra
@@ -89,31 +83,6 @@ export class CompraComponent implements OnInit{
      if(exitoCompra){
       this.router.navigate(['/']);
      }
-  }
-
-  private async Compracion(compra: Compra) : Promise<string>{
-    const txHash = await window.compradacion.request({
-      method: 'compra_mandarCompra',
-      params: [
-        {
-          from: compra.from,
-          to: compra.to,
-          value: compra.valor
-        }
-      ]
-    });
-    console.log(txHash)
-    return txHash;
-  }
-
-  async getPrecio(){
-    const formData = new FormData();
-    formData.append('PrecioTotal', this.precioTotal.toString());
-
-    let request$ = await this.httpClient.post<number>(`${this.API_URL}api/Confirmacion/PrecioEuro`, formData);
-
-    this.precioEuro = await lastValueFrom(request$);
-    console.log(lastValueFrom(request$))
   }
 }
 
